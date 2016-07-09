@@ -1,0 +1,44 @@
+{
+  "manifest_version": 2,
+  "name": "chrome extension template",
+  "short_name": "template",
+  "version": "0.0.1",
+  "default_locale": "ja_JP",
+  "description": "This extension is simple template.",
+  "icons": {
+    "16": "images/icon/icon_16.png",
+    "48": "images/icon/icon_48.png",
+    "128": "images/icon/icon_128.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "19": "images/icon/icon_19.png",
+      "38": "images/icon/icon_38.png"
+    },
+    "default_title": "sample!!",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/**"],
+      "css": ["css/contents_style.css"],
+      "js": ["js/content_scripts/common.js"]
+    }
+  ],
+  "background": {
+    "scripts": [
+      "js/background.js"
+    ],
+    "persistent": false
+  },
+  "permissions": [
+    "tabs",
+    "https://*/*",
+    "http://*/*",
+    "storage",
+    "webNavigation"
+  ],
+  "options_page": "options.html",
+  "minimum_chrome_version": 50,
+  "homepage_url": "https://github.com/shoheiono"
+}
